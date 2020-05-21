@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  tutorial:
+    image: zzzcat/dispshell:latest
+    tty: true
+    working_dir: /work
+    volumes:
+        - .:/work
+        - /var/run/docker.sock:/var/run/docker.sock
+    # 環境変数
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+      GITHUB_USER: ${GITHUB_USER}
